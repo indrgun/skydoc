@@ -73,7 +73,7 @@ In this case, you can have `skylark_library` targets in `checkstyle/BUILD` and
 `checkstyle/BUILD`:
 
 ```python
-load("@io_bazel_skydoc//skylark:skylark.bzl", "skylark_library")
+load("@bazel_skylib//:skylark_library.bzl", "skylark_library")
 
 skylark_library(
     name = "checkstyle-rules",
@@ -84,7 +84,7 @@ skylark_library(
 `lua/BUILD`:
 
 ```python
-load("@io_bazel_skydoc//skylark:skylark.bzl", "skylark_library")
+load("@bazel_skylib//:skylark_library.bzl", "skylark_library")
 
 skylark_library(
     name = "lua-rules",
@@ -104,7 +104,7 @@ load("@io_bazel_skydoc//skylark:skylark.bzl", "skylark_doc")
 
 skylark_doc(
     name = "docs",
-    deps = [
+    srcs = [
         "//checkstyle:checkstyle-rules",
         "//lua:lua-rules",
     ],
@@ -112,5 +112,5 @@ skylark_doc(
 ```
 
 Running `bazel build //:docs` would build a single zip containing documentation
-for all the `.bzl` files contained in the two `skylark_library` targets.
+for all the `.bzl` files contained in the two `skylark_library` targets' `srcs`.
 
