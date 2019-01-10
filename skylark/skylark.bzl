@@ -306,9 +306,9 @@ def skydoc_repositories():
   """Adds the external repositories used by the skylark rules."""
   native.http_archive(
       name = "protobuf",
-      url = "https://github.com/google/protobuf/archive/v3.4.1.tar.gz",
-      sha256 = "8e0236242106e680b4f9f576cc44b8cd711e948b20a9fc07769b0a20ceab9cc4",
-      strip_prefix = "protobuf-3.4.1",
+      url = "https://github.com/protocolbuffers/protobuf/archive/v3.6.1.3.tar.gz",
+      sha256 = "73fdad358857e120fd0fa19e071a96e15c0f23bb25f85d3f7009abfd4f264a2a",
+      strip_prefix = "protobuf-3.6.1.3",
   )
 
   # Protobuf expects an //external:python_headers label which would contain the
